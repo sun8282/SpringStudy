@@ -27,6 +27,8 @@ public class ConfigurationSingletonTest {
         System.out.println("memberRepository = " + memberRepository);
     }
 
+
+
     @Test
     void configurationDeep(){
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);

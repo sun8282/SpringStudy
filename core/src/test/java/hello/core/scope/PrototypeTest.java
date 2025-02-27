@@ -20,18 +20,20 @@ public class PrototypeTest {
         System.out.println("prototypeBean1 = " + prototypeBean1);
         System.out.println("prototypeBean2 = " + prototypeBean2);
         assertThat(prototypeBean1).isNotSameAs(prototypeBean2);
+
+        ac.close();
     }
 
     @Scope("prototype")
     static class PrototypeBean{
         @PostConstruct
         public void init(){
-            System.out.println("SingletonBean.init");
+            System.out.println("PrototypeBean.init");
         }
 
         @PreDestroy
         public void destroy(){
-            System.out.println("SingletonBean.destroy");
+            System.out.println("PrototypeBean.destroy");
         }
     }
 
